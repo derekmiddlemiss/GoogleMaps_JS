@@ -8,6 +8,8 @@ var initialize = function(){
   bounceButton.addEventListener( 'click', mainMap.bounceMarkers.bind( mainMap ) );
   var aeroGraveyardButton = document.querySelector( '#button-aero-graveyard' );
   aeroGraveyardButton.addEventListener( 'click', mainMap.centerAtAeroGraveyard.bind( mainMap ) );
+  var whereNowButton = document.querySelector( '#button-where-now' );
+  whereNowButton.addEventListener( 'click', mainMap.whereNow.bind( mainMap ) );
 }
 
 window.addEventListener( 'load', initialize );

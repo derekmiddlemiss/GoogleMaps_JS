@@ -39,6 +39,21 @@ MapWrapper.prototype.centerAtAeroGraveyard = function(){
   this.googleMap.setCenter( aeroGraveyardPosition );
   this.googleMap.mapTypeId = google.maps.MapTypeId.SATELLITE
   this.googleMap.setZoom( 16 );
+},
+
+MapWrapper.prototype.whereNow = function(){
+  if ( 'geolocation' in navigator ){
+
+    navigator.geolocation.getCurrentPosition( function( position )  {
+      var currentPosition = { lat: position.coords.latitude, lng: position.coords.longitude };
+      this.googleMap.setCenter( currentPosition );
+    }.bind( this ));
+
+  } else {
+
+    alert( "Current position not available" );
+
+  }
 }
 
 
